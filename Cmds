@@ -1,0 +1,15 @@
+mongosh  ## login
+show dbs 
+use dbname
+show tables  or show collections
+db.tablename.find()
+  *********backup of db**************
+mongodump --db dbname --out ~/dir_name  
+***********restore**************
+mongorestore --db ultimate-emailing-new /dir_restored_location
+*********Drop old db & restore**************
+mongorestore --drop --db name /dir_restored_location
+
+
+
+
