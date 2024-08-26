@@ -9,9 +9,28 @@ mongodump --db dbname --out ~/dir_name
 mongorestore --db mydb /dir_restored_location
 *********Drop old db & restore**************
 mongorestore --drop --db name /dir_restored_location
+*********************restoring specify collection/table*****
+mongorestore --drop --db mydb  --collection user /path           this with drop 
 
-with uri
+*****************************import cmd **************
+mongoimport --db dbname --collection collectionName --file /path/to/categories.json --jsonArray --drop    with drop 
+
+
+***************backup of db with uri********************
 
 mongodump --uri="mongodb+srv://myUser:myPassword@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority" --out /backup/mongodb
+
+
+
+*************config of MongoDB************
+sudo vim /etc/mongod.conf
+
+for replica set 
+
+replication:
+   replSetName: "rs0"                you can give any name instead of rs0
+
+
+for security  
 
 
