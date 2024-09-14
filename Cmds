@@ -3,10 +3,24 @@ show dbs
 use dbname
 show tables  or show collections
 db.tablename.find()
-  *********backup of db**************
+
+********drop database***********
+use dbname;
+db.dropDatabase();
+
+
+
+*********backup of db**************
 mongodump --db dbname --out ~/dir_name  
 ***********restore**************
 mongorestore --db mydb /dir_restored_location
+
+***************************archive 
+mongorestore --uri="mongodb+srv://<username>:<password>@<cluster-url>/<dbname>" --archive=mongo_backup_2024-09-14_06-02-53.gz --gzip
+
+mongorestore --db mydb --archive=mongo_backup_name.gz --gzip
+
+
 *********Drop old db & restore**************
 mongorestore --drop --db name /dir_restored_location
 *********************restoring specify collection/table*****
